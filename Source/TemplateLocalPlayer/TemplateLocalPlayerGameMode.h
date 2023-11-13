@@ -12,7 +12,7 @@ class ATemplateLocalPlayerGameMode : public AGameModeBase
 	GENERATED_BODY()
 
 public:
-	ATemplateLocalPlayerGameMode();
+	
 };
 
 
