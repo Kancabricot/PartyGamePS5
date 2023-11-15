@@ -6,5 +6,5 @@
 
 ATemplateLocalPlayerGameMode::ATemplateLocalPlayerGameMode()
 {
-
+	DefaultPawnClass = nullptr;
 }
