@@ -8,9 +8,6 @@
 
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FControllerStatusChanged, bool, IsConnected);
 
-/**
- * 
- */
 UCLASS()
 class TEMPLATELOCALPLAYER_API UHearthDefenderInstance : public UGameInstance
 {
