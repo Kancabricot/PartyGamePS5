@@ -12,7 +12,7 @@ AIvyStatic::AIvyStatic()
 	PrimaryActorTick.bCanEverTick = true;
 
 	SplineComponent = CreateDefaultSubobject<USplineComponent> ("Spline");
-
+	
 	if (SplineComponent)
 	{
 		SetRootComponent(SplineComponent);
@@ -24,6 +24,10 @@ void AIvyStatic::OnConstruction(const FTransform& Transform)
 {
 	Super::OnConstruction(Transform);
 	if(!Mesh)
+	{
+		return;
+	}
+	/*if(!Mesh)
 	{
 		return;
 	}
@@ -43,7 +47,29 @@ void AIvyStatic::OnConstruction(const FTransform& Transform)
 		{
 			LoopIndex = i;
 		}
+	}*/
+	for(int SplineCount = 0; SplineCount<(SplineComponent -> GetNumberOfSplinePoints() - 1); SplineCount++)
+	{
+		USplineMeshComponent* SplineMeshComponent = NewObject<USplineMeshComponent>(this,USplineMeshComponent::StaticClass());
+
+		SplineMeshComponent-> SetStaticMesh(Mesh);
+		SplineMeshComponent->SetMobility(EComponentMobility::Movable);
+		SplineMeshComponent->CreationMethod = EComponentCreationMethod::UserConstructionScript;
+		SplineMeshComponent-> RegisterComponentWithWorld(GetWorld());
+		SplineMeshComponent->AttachToComponent(SplineComponent,FAttachmentTransformRules::KeepRelativeTransform);
+
+		const FVector StartPoint = SplineComponent-> GetLocationAtSplinePoint(SplineCount,ESplineCoordinateSpace::Local);
+		const FVector StartTangent =SplineComponent-> GetTangentAtSplinePoint(SplineCount, ESplineCoordinateSpace::Local);
+		const FVector EndPoint = SplineComponent-> GetLocationAtSplinePoint(SplineCount + 1, ESplineCoordinateSpace::Local);
+		const FVector EndTangent =SplineComponent-> GetTangentAtSplinePoint(SplineCount + 1, ESplineCoordinateSpace::Local);
+
+		SplineMeshComponent-> SetStartAndEnd(StartPoint, StartTangent, EndPoint,EndTangent,true);
+
+		SplineMeshComponent->SetCollisionEnabled(ECollisionEnabled::NoCollision);
+
+		SplineMeshComponent->SetForwardAxis(ForwardAxis);
 	}
+	
 	USplineMeshComponent* SplineMeshComponent = NewObject<USplineMeshComponent>(this, USplineMeshComponent::StaticClass());
 
 	SplineMeshComponent->SetStaticMesh(Mesh);
@@ -63,6 +89,7 @@ void AIvyStatic::Tick(float DeltaTime)
 	Super::Tick(DeltaTime);
 
 }
+
 
 void AIvyStatic::ClearSplinePoints()
 {

@@ -6,7 +6,11 @@
 
 
 #include <Components/SplineComponent.h>
+
+#include "Components/SplineMeshComponent.h"
 #include "Math/UnrealMathUtility.h"
+
+
 
 
 #include "GameFramework/Actor.h"
@@ -32,10 +36,23 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 	
-
-	UPROPERTY(VisibleAnywhere, Category = "Spline")
+	UPROPERTY(BlueprintReadWrite,EditAnywhere, Category = "TestCat")
+	bool CoolStringValue;
+	
+	UPROPERTY(BlueprintReadOnly, Category = "Spline")
 	USplineComponent* SplineComponent;
+		
+	UPROPERTY(BlueprintReadWrite,EditAnywhere, Category = "Spline")
+	UStaticMesh* Mesh;
 
+	UPROPERTY(BlueprintReadWrite,EditAnywhere, Category = "Spline")
+	TEnumAsByte<ESplineMeshAxis::Type> ForwardAxis;
+
+	UPROPERTY(EditDefaultsOnly,BlueprintReadWrite, Category = "Spline")
+	class UMaterialInterface* DefaultMaterial;
+	
+	
+	/*
 	UPROPERTY(VisibleAnywhere, Category = "Spline")
 	bool allowScalling;
 
@@ -46,7 +63,8 @@ public:
 	float SectionLength;
 
 	UPROPERTY(VisibleAnywhere, Category = "Default")
-	int LoopIndex;
+	int LoopIndex;*/
+
 
 
 	UFUNCTION(BlueprintCallable)

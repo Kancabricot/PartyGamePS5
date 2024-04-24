@@ -3,6 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "Modules/ModuleManager.h"
 #include "GameFramework/Character.h"
 #include "InputActionValue.h"
 #include "TemplateLocalPlayerCharacter.generated.h"
@@ -22,7 +23,9 @@ class ATemplateLocalPlayerCharacter : public ACharacter
 	class UInputAction* MoveAction;
 
 public:
+	
 	ATemplateLocalPlayerCharacter();
+	//virtual void StatupModule() override;
 	
 
 protected:
@@ -39,4 +42,5 @@ protected:
 	virtual void BeginPlay();
 
 };
+
 
