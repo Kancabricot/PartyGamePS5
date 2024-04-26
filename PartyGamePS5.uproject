@@ -13,9 +13,9 @@
 			]
 		},
 		{
-			"Name": "DetailsModule",
-			"Type": "Runtime",
-			"LoadingPhase": "Default"
+			"Name": "IvyModule",
+			"Type": "Editor",
+			"LoadingPhase": "PostEngineInit"
 		}
 	],
 	"Plugins": [

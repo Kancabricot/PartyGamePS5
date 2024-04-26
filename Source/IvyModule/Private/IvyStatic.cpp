@@ -1,10 +1,7 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 
-#include "IvyStatic.h"
-
-#include "Components/SplineMeshComponent.h"
-
+#include"IvyStatic.h"
 // Sets default values
 AIvyStatic::AIvyStatic()
 {
@@ -95,4 +92,6 @@ void AIvyStatic::ClearSplinePoints()
 {
 	
 }
+
+
 

@@ -2,18 +2,23 @@
 
 #pragma once
 
-#if WITH_EDITOR
+#include "CoreMinimal.h"
+#include "PropertyEditor/Public/IDetailCustomization.h"
 
-#include "Editor/DetailCustomizations/Public/DetailCustomizations.h"
-#include "Editor/PropertyEditor/Public/IDetailCustomization.h"
+class FReply;
 
-
-class FDetailsActorDetailCustomization : public IDetailCustomization
+class FIvyModulDetails : public IDetailCustomization
 {
 public:
 	static TSharedRef<IDetailCustomization> MakeInstance();
 
 	virtual void CustomizeDetails(IDetailLayoutBuilder& DetailBuilder) override;
+
+	FReply EditObjects();
+
+private:
+	TArray<TWeakObjectPtr<UObject>> ObjectsToEdit;
+
+	
 };
 
-#endif

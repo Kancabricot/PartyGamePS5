@@ -16,6 +16,7 @@
 
 ATemplateLocalPlayerCharacter::ATemplateLocalPlayerCharacter()
 {
+	UE_LOG(LogTemp, Warning,TEXT("TemplateLocalPlayer started!"));
 	// Set size for collision capsule
 	GetCapsuleComponent()->InitCapsuleSize(42.f, 96.0f);
 		

@@ -7,6 +7,7 @@
 void UHearthDefenderInstance::Init() {
 	Super::Init();
 
+
 	FCoreDelegates::OnControllerConnectionChange/*.AddUObject(this, &UHearthDefenderInstance::ControllerStatusIsChanged)*/;
 }
 

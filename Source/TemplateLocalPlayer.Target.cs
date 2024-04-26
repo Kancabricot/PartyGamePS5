@@ -11,6 +11,7 @@ public class TemplateLocalPlayerTarget : TargetRules
 		DefaultBuildSettings = BuildSettingsVersion.V2;
 		IncludeOrderVersion = EngineIncludeOrderVersion.Latest;
 		ExtraModuleNames.Add("TemplateLocalPlayer");
-		ExtraModuleNames.Add("DetailsModule");
+		ExtraModuleNames.Add("IvyModule");
+		
 	}
 }
