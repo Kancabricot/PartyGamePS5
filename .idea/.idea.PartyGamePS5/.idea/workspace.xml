@@ -9,7 +9,8 @@
   <component name="ChangeListManager">
     <list default="true" id="16f4762d-605f-435c-a760-f358137564cb" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PartyGamePS5/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PartyGamePS5/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/IvyModule/Private/IvyStatic.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/IvyModule/Private/IvyStatic.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Maps/TestRoom.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Maps/TestRoom.umap" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/IvyModule/Private/IvyModulDetails.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/IvyModule/Private/IvyModulDetails.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,26 +40,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;C++ Project.PartyGamePS5.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "C++ Project.PartyGamePS5.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;rider.external.source.directories&quot;: [
-      &quot;C:\\Users\\drako\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\DecompilerCache&quot;,
-      &quot;C:\\Users\\drako\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\SourcesCache&quot;,
-      &quot;C:\\Users\\drako\\AppData\\Local\\Symbols\\src&quot;
+  "keyToStringList": {
+    "rider.external.source.directories": [
+      "C:\\Users\\GAME3\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\DecompilerCache",
+      "C:\\Users\\GAME3\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\SourcesCache",
+      "C:\\Users\\GAME3\\AppData\\Local\\Symbols\\src"
     ]
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="PartyGamePS5" type="CppProject" factoryName="C++ Project">
       <configuration_1>
@@ -140,6 +141,7 @@
       <workItem from="1714078385161" duration="5455000" />
       <workItem from="1714083874508" duration="1120000" />
       <workItem from="1714128437642" duration="6095000" />
+      <workItem from="1714392142144" duration="3651000" />
     </task>
     <servers />
   </component>
