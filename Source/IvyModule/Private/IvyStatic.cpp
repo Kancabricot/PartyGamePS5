@@ -55,6 +55,7 @@ void AIvyStatic::OnConstruction(const FTransform& Transform)
 		SplineMeshComponent-> RegisterComponentWithWorld(GetWorld());
 		SplineMeshComponent->AttachToComponent(SplineComponent,FAttachmentTransformRules::KeepRelativeTransform);
 
+		
 		const FVector StartPoint = SplineComponent-> GetLocationAtSplinePoint(SplineCount,ESplineCoordinateSpace::Local);
 		const FVector StartTangent =SplineComponent-> GetTangentAtSplinePoint(SplineCount, ESplineCoordinateSpace::Local);
 		const FVector EndPoint = SplineComponent-> GetLocationAtSplinePoint(SplineCount + 1, ESplineCoordinateSpace::Local);

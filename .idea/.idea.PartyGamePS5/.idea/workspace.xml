@@ -8,22 +8,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="16f4762d-605f-435c-a760-f358137564cb" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Ivy/BP_IvyStatic.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PartyGamePS5.uproject" beforeDir="false" afterPath="$PROJECT_DIR$/PartyGamePS5.uproject" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/DetailsModule/DetailsActor.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/DetailsModule/DetailsActor.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/DetailsModule/DetailsModule.Build.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/DetailsModule/DetailsModule.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/DetailsModule/DetailsModule.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/DetailsModule/Private/DetailsActorDetailCustomization.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/DetailsModule/Private/IvyStatic.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/DetailsModule/Public/DetailsActorDetailCustomization.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/DetailsModule/Public/IvyStatic.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/TemplateLocalPlayer.Target.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Source/TemplateLocalPlayer.Target.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/TemplateLocalPlayer/Private/HearthDefenderInstance.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/TemplateLocalPlayer/Private/HearthDefenderInstance.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/TemplateLocalPlayer/TemplateLocalPlayer.Build.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Source/TemplateLocalPlayer/TemplateLocalPlayer.Build.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/TemplateLocalPlayer/TemplateLocalPlayerCharacter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/TemplateLocalPlayer/TemplateLocalPlayerCharacter.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/TemplateLocalPlayerEditor.Target.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Source/TemplateLocalPlayerEditor.Target.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.PartyGamePS5/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PartyGamePS5/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/IvyModule/Private/IvyStatic.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/IvyModule/Private/IvyStatic.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -153,6 +139,7 @@
       <workItem from="1714066606632" duration="1393000" />
       <workItem from="1714078385161" duration="5455000" />
       <workItem from="1714083874508" duration="1120000" />
+      <workItem from="1714128437642" duration="6095000" />
     </task>
     <servers />
   </component>
@@ -160,6 +147,17 @@
     <option name="version" value="3" />
   </component>
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
