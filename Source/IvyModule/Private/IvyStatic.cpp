@@ -20,6 +20,7 @@ AIvyStatic::AIvyStatic()
 void AIvyStatic::OnConstruction(const FTransform& Transform)
 {
 	Super::OnConstruction(Transform);
+	
 	if(!Mesh)
 	{
 		return;
@@ -45,6 +46,8 @@ void AIvyStatic::OnConstruction(const FTransform& Transform)
 			LoopIndex = i;
 		}
 	}*/
+	AllStems.Reset();
+	
 	for(int SplineCount = 0; SplineCount<(SplineComponent -> GetNumberOfSplinePoints() - 1); SplineCount++)
 	{
 		USplineMeshComponent* SplineMeshComponent = NewObject<USplineMeshComponent>(this,USplineMeshComponent::StaticClass());
@@ -66,12 +69,18 @@ void AIvyStatic::OnConstruction(const FTransform& Transform)
 		SplineMeshComponent->SetCollisionEnabled(ECollisionEnabled::NoCollision);
 
 		SplineMeshComponent->SetForwardAxis(ForwardAxis);
+
+		SplineMeshComponent->SetMaterial(0,DefaultMaterial);
+		
+		AllStems.Add(SplineMeshComponent);
+		
 	}
 	
 	USplineMeshComponent* SplineMeshComponent = NewObject<USplineMeshComponent>(this, USplineMeshComponent::StaticClass());
 
 	SplineMeshComponent->SetStaticMesh(Mesh);
 	SplineMeshComponent->SetMobility(EComponentMobility::Movable);
+	
 }
 
 // Called when the game starts or when spawned
@@ -92,6 +101,18 @@ void AIvyStatic::Tick(float DeltaTime)
 void AIvyStatic::ClearSplinePoints()
 {
 	
+	if(AllStems.Num()>0)
+	{
+		USplineMeshComponent* ActualStem = AllStems.Last();
+		
+		if(ActualStem)
+		{
+			ActualStem->DetachFromComponent(FDetachmentTransformRules::KeepWorldTransform);
+			ActualStem->DestroyComponent();
+
+			AllStems.Remove(ActualStem);
+		}
+	}
 }
 
 

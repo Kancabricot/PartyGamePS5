@@ -36,8 +36,8 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 	
-	UPROPERTY(BlueprintReadWrite,EditAnywhere, Category = "TestCat")
-	bool CoolStringValue;
+	UPROPERTY(VisibleAnywhere, Category = "IvySettings")
+	TArray<USplineMeshComponent*> AllStems;
 	
 	UPROPERTY(BlueprintReadOnly, Category = "Spline")
 	USplineComponent* SplineComponent;
@@ -48,7 +48,7 @@ public:
 	UPROPERTY(BlueprintReadWrite,EditAnywhere, Category = "Spline")
 	TEnumAsByte<ESplineMeshAxis::Type> ForwardAxis;
 
-	UPROPERTY(EditDefaultsOnly,BlueprintReadWrite, Category = "Spline")
+	UPROPERTY(BlueprintReadWrite,EditAnywhere, Category = "Spline")
 	class UMaterialInterface* DefaultMaterial;
 	
 	
@@ -67,7 +67,7 @@ public:
 
 
 
-	UFUNCTION(BlueprintCallable)
+	UFUNCTION(BlueprintCallable,BlueprintPure, Category = "Spline")
 	virtual void ClearSplinePoints();
 
 };

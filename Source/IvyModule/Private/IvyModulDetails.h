@@ -14,11 +14,9 @@ public:
 
 	virtual void CustomizeDetails(IDetailLayoutBuilder& DetailBuilder) override;
 
-	FReply EditObjects();
+	FReply DeleteStem();
 
 private:
-	TArray<TWeakObjectPtr<UObject>> ObjectsToEdit;
-
-	
+	/*TArray<TWeakObjectPtr<UObject>> ObjectsToEdit;*/
 };
 
