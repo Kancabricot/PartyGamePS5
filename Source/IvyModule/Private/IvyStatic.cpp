@@ -100,7 +100,7 @@ void AIvyStatic::Tick(float DeltaTime)
 
 void AIvyStatic::ClearSplinePoints()
 {
-	
+	clearLeaves();
 	while(AllStems.Num()>0)
 	{
 		USplineMeshComponent* ActualStem = AllStems.Last();
@@ -115,24 +115,15 @@ void AIvyStatic::ClearSplinePoints()
 	}
 	SplineComponent->ClearSplinePoints();
 	SplineComponent->AddSplinePoint(FVector(0,0,0),ESplineCoordinateSpace::Local,true);
-	SplineComponent->AddSplinePoint(FVector(0,50,0),ESplineCoordinateSpace::Local,true);
+	SplineComponent->AddSplinePoint(FVector(0,100,0),ESplineCoordinateSpace::Local,true);
 }
+
 
 void AIvyStatic::CreateLeaves()
 {
+	float tempLength = leavesDistances;
 	float sectionLength = 0;
-	while(AllLeaves.Num()>0)
-	{
-		USplineMeshComponent* ActualLeaves = AllLeaves.Last();
-		
-		if(ActualLeaves)
-		{
-			ActualLeaves->DetachFromComponent(FDetachmentTransformRules::KeepWorldTransform);
-			ActualLeaves->DestroyComponent();
-
-			AllLeaves.Remove(ActualLeaves);
-		}
-	}
+	clearLeaves();
 	if(autoLeaves)
 	{
 		nbLeaves = UKismetMathLibrary::FTrunc(SplineComponent->GetSplineLength()/leavesDistances);
@@ -143,12 +134,15 @@ void AIvyStatic::CreateLeaves()
 	for(int i=0;i<=nbLeaves-2;i++)
 	{
 		UStaticMeshComponent* StaticMeshComponent = NewObject<UStaticMeshComponent>(this,UStaticMeshComponent::StaticClass());
-		
+		//UStaticMeshComponent* StaticMeshComponent = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Mesh"));
 		int intRand = FMath::RandRange(0, leaves.Num() - 1);
+		int intRand2 = FMath::RandRange(0,180);
+		float intRand3 = FMath::RandRange(1.2f,2.0f);
 		StaticMeshComponent->SetStaticMesh(leaves[intRand]);
 		
 		StaticMeshComponent->SetRelativeLocation(FVector(SplineComponent->GetLocationAtDistanceAlongSpline(leavesDistances,ESplineCoordinateSpace::Local)));
-		StaticMeshComponent->SetRelativeRotation(FQuat(SplineComponent->GetRotationAtDistanceAlongSpline(leavesDistances,ESplineCoordinateSpace::Local)));
+		StaticMeshComponent->SetRelativeRotation(FQuat(SplineComponent->GetRotationAtDistanceAlongSpline(leavesDistances,ESplineCoordinateSpace::Local))*intRand2);
+		StaticMeshComponent->SetRelativeScale3D(FVector(intRand3));
 
 		
 		StaticMeshComponent->SetMobility(EComponentMobility::Movable);
@@ -156,10 +150,30 @@ void AIvyStatic::CreateLeaves()
 		StaticMeshComponent->RegisterComponentWithWorld(GetWorld());
 		StaticMeshComponent->AttachToComponent(SplineComponent,FAttachmentTransformRules::KeepRelativeTransform);
 
+		AllLeaves.Add(StaticMeshComponent);
+		
 		leavesDistances = leavesDistances+sectionLength;
 	}
+	leavesDistances = tempLength;
 	
 	
+	
+}
+
+void AIvyStatic::clearLeaves()
+{
+	while(AllLeaves.Num()>0)
+	{
+		UStaticMeshComponent* ActualLeaves = AllLeaves.Last();
+		
+		if(ActualLeaves)
+		{
+			ActualLeaves->DetachFromComponent(FDetachmentTransformRules::KeepWorldTransform);
+			ActualLeaves->DestroyComponent();
+
+			AllLeaves.Remove(ActualLeaves);
+		}
+	}
 }
 
 

@@ -8,6 +8,7 @@
 #include <Components/SplineComponent.h>
 
 #include "Components/SplineMeshComponent.h"
+#include "Components/StaticMeshComponent.h"
 #include "Math/UnrealMathUtility.h"
 #include "Kismet/KismetMathLibrary.h"
 
@@ -39,15 +40,15 @@ public:
 	TArray<USplineMeshComponent*> AllStems;
 
 	UPROPERTY(VisibleAnywhere, Category = "LeavesSettings")
-	TArray<USplineMeshComponent*> AllLeaves;
+	TArray<UStaticMeshComponent*> AllLeaves;
 	
-	UPROPERTY(BlueprintReadWrite,EditAnywhere, Category = "LeavesSettings")
+	UPROPERTY(BlueprintReadWrite,EditAnywhere, Category = "LeavesSettings",meta=(Tooltip="Prefer distance between leaves"))
 	bool autoLeaves;
 
-	UPROPERTY(BlueprintReadWrite,EditAnywhere, Category = "LeavesSettings")
+	UPROPERTY(BlueprintReadWrite,EditAnywhere, Category = "LeavesSettings",meta=(EditCondition="autoLeaves",EditConditionHides))
 	int nbLeaves;
 
-	UPROPERTY(BlueprintReadWrite,EditAnywhere, Category = "LeavesSettings")
+	UPROPERTY(BlueprintReadWrite,EditAnywhere, Category = "LeavesSettings",meta=(EditCondition="!autoLeaves",EditConditionHides))
 	float leavesDistances;
 
 	UPROPERTY(BlueprintReadWrite,EditAnywhere, Category = "LeavesSettings")
@@ -70,7 +71,8 @@ public:
 
 	UFUNCTION(CallInEditor, Category = "IvySettings")
 	virtual void CreateLeaves();
-	
+private :
+	void clearLeaves();
 	
 	/*
 	UPROPERTY(VisibleAnywhere, Category = "Spline")
