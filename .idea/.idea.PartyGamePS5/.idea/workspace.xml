@@ -8,12 +8,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="16f4762d-605f-435c-a760-f358137564cb" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.PartyGamePS5/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PartyGamePS5/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Maps/TestRoom.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Maps/TestRoom.umap" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PartyGamePS5.uproject" beforeDir="false" afterPath="$PROJECT_DIR$/PartyGamePS5.uproject" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/IvyModule/Private/IvyModulDetails.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/IvyModule/Private/IvyModulDetails.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/IvyModule/Private/IvyStatic.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/IvyModule/Private/IvyStatic.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/IvyModule/Public/IvyStatic.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/IvyModule/Public/IvyStatic.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -145,6 +140,7 @@
       <workItem from="1714392142144" duration="12249000" />
       <workItem from="1714408029695" duration="2553000" />
       <workItem from="1714411250071" duration="8587000" />
+      <workItem from="1714460595865" duration="850000" />
     </task>
     <servers />
   </component>
