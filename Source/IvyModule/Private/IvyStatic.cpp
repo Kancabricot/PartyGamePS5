@@ -148,7 +148,7 @@ void AIvyStatic::CreateLeaves()
 		StaticMeshComponent->SetStaticMesh(leaves[intRand]);
 		
 		StaticMeshComponent->SetRelativeLocation(FVector(SplineComponent->GetLocationAtDistanceAlongSpline(leavesDistances,ESplineCoordinateSpace::Local)));
-		StaticMeshComponent->SetRelativeRotation(FQuat(SplineComponent->GetRotationAtDistanceAlongSpline(leavesDistances,ESplineCoordinateSpace::Local))*);
+		StaticMeshComponent->SetRelativeRotation(FQuat(SplineComponent->GetRotationAtDistanceAlongSpline(leavesDistances,ESplineCoordinateSpace::Local)));
 
 		
 		StaticMeshComponent->SetMobility(EComponentMobility::Movable);
