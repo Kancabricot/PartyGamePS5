@@ -9,8 +9,7 @@
 
 #include "Components/SplineMeshComponent.h"
 #include "Math/UnrealMathUtility.h"
-
-
+#include "Kismet/KismetMathLibrary.h"
 
 
 #include "GameFramework/Actor.h"
@@ -38,6 +37,21 @@ public:
 	
 	UPROPERTY(VisibleAnywhere, Category = "IvySettings")
 	TArray<USplineMeshComponent*> AllStems;
+
+	UPROPERTY(VisibleAnywhere, Category = "LeavesSettings")
+	TArray<USplineMeshComponent*> AllLeaves;
+	
+	UPROPERTY(BlueprintReadWrite,EditAnywhere, Category = "LeavesSettings")
+	bool autoLeaves;
+
+	UPROPERTY(BlueprintReadWrite,EditAnywhere, Category = "LeavesSettings")
+	int nbLeaves;
+
+	UPROPERTY(BlueprintReadWrite,EditAnywhere, Category = "LeavesSettings")
+	float leavesDistances;
+
+	UPROPERTY(BlueprintReadWrite,EditAnywhere, Category = "LeavesSettings")
+	TArray<UStaticMesh*> leaves;
 	
 	UPROPERTY(BlueprintReadOnly, Category = "Spline")
 	USplineComponent* SplineComponent;
@@ -50,6 +64,12 @@ public:
 
 	UPROPERTY(BlueprintReadWrite,EditAnywhere, Category = "Spline")
 	class UMaterialInterface* DefaultMaterial;
+//Clean les Spline Mesh tiges + spline points
+	UFUNCTION(CallInEditor, Category = "IvySettings")
+	virtual void ClearSplinePoints();
+
+	UFUNCTION(CallInEditor, Category = "IvySettings")
+	virtual void CreateLeaves();
 	
 	
 	/*
@@ -67,7 +87,5 @@ public:
 
 
 
-	UFUNCTION(BlueprintCallable,BlueprintPure, Category = "Spline")
-	virtual void ClearSplinePoints();
 
 };

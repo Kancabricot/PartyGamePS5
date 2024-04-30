@@ -24,39 +24,39 @@ void FIvyModulDetails::CustomizeDetails(IDetailLayoutBuilder& DetailBuilder)
 	//DetailBuilder.GetObjectsBeingCustomized(ObjectsToEdit);
 
 	IDetailCategoryBuilder& Category2 = DetailBuilder.EditCategory("Rendering",FText::GetEmpty(),ECategoryPriority::Default);
-	Category2.SetCategoryVisibility(true
+	Category2.SetCategoryVisibility(false
 );
 	
 	IDetailCategoryBuilder& Category3 = DetailBuilder.EditCategory("Networking",FText::GetEmpty(),ECategoryPriority::Default);
-	Category3.SetCategoryVisibility(true
+	Category3.SetCategoryVisibility(false
 );
 
 	IDetailCategoryBuilder& Category4 = DetailBuilder.EditCategory("Cooking",FText::GetEmpty(),ECategoryPriority::Default);
-	Category4.SetCategoryVisibility(true
+	Category4.SetCategoryVisibility(false
 );
 
 	IDetailCategoryBuilder& Category5 = DetailBuilder.EditCategory("Actor",FText::GetEmpty(),ECategoryPriority::Default);
-	Category5.SetCategoryVisibility(true
+	Category5.SetCategoryVisibility(false
 );
 
 	IDetailCategoryBuilder& Category6 = DetailBuilder.EditCategory("Input",FText::GetEmpty(),ECategoryPriority::Default);
-	Category6.SetCategoryVisibility(true
+	Category6.SetCategoryVisibility(false
 );
 	
 	IDetailCategoryBuilder& Category7 = DetailBuilder.EditCategory("HLOD",FText::GetEmpty(),ECategoryPriority::Default);
-	Category7.SetCategoryVisibility(true
+	Category7.SetCategoryVisibility(false
 );
 	
 	IDetailCategoryBuilder& Category8 = DetailBuilder.EditCategory("Replication",FText::GetEmpty(),ECategoryPriority::Default);
-	Category8.SetCategoryVisibility(true
+	Category8.SetCategoryVisibility(false
 );
 
 	IDetailCategoryBuilder& Category9 = DetailBuilder.EditCategory("Collision",FText::GetEmpty(),ECategoryPriority::Default);
-	Category9.SetCategoryVisibility(true
+	Category9.SetCategoryVisibility(false
 );
 	
 	IDetailCategoryBuilder& Category10 = DetailBuilder.EditCategory("Physics",FText::GetEmpty(),ECategoryPriority::Default);
-	Category10.SetCategoryVisibility(true
+	Category10.SetCategoryVisibility(false
 );
 
 	IDetailCategoryBuilder& Category = DetailBuilder.EditCategory("IvySettings",FText::GetEmpty(),ECategoryPriority::Important);
@@ -78,6 +78,7 @@ void FIvyModulDetails::CustomizeDetails(IDetailLayoutBuilder& DetailBuilder)
 
 FReply FIvyModulDetails::DeleteStem()
 {
+	
 	//AIvyStatic::ClearSplinePoints();
 	
 	return FReply::Handled();

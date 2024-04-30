@@ -6,7 +6,7 @@
 AIvyStatic::AIvyStatic()
 {
  	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
-	PrimaryActorTick.bCanEverTick = true;
+	PrimaryActorTick.bCanEverTick = false;
 
 	SplineComponent = CreateDefaultSubobject<USplineComponent> ("Spline");
 	
@@ -101,7 +101,7 @@ void AIvyStatic::Tick(float DeltaTime)
 void AIvyStatic::ClearSplinePoints()
 {
 	
-	if(AllStems.Num()>0)
+	while(AllStems.Num()>0)
 	{
 		USplineMeshComponent* ActualStem = AllStems.Last();
 		
@@ -113,6 +113,53 @@ void AIvyStatic::ClearSplinePoints()
 			AllStems.Remove(ActualStem);
 		}
 	}
+	SplineComponent->ClearSplinePoints();
+	SplineComponent->AddSplinePoint(FVector(0,0,0),ESplineCoordinateSpace::Local,true);
+	SplineComponent->AddSplinePoint(FVector(0,50,0),ESplineCoordinateSpace::Local,true);
+}
+
+void AIvyStatic::CreateLeaves()
+{
+	float sectionLength = 0;
+	while(AllLeaves.Num()>0)
+	{
+		USplineMeshComponent* ActualLeaves = AllLeaves.Last();
+		
+		if(ActualLeaves)
+		{
+			ActualLeaves->DetachFromComponent(FDetachmentTransformRules::KeepWorldTransform);
+			ActualLeaves->DestroyComponent();
+
+			AllLeaves.Remove(ActualLeaves);
+		}
+	}
+	if(autoLeaves)
+	{
+		nbLeaves = UKismetMathLibrary::FTrunc(SplineComponent->GetSplineLength()/leavesDistances);
+	}
+	sectionLength = (SplineComponent->GetSplineLength()/nbLeaves);
+	float leavesDistance = sectionLength;
+	
+	for(int i=0;i<=nbLeaves-2;i++)
+	{
+		UStaticMeshComponent* StaticMeshComponent = NewObject<UStaticMeshComponent>(this,UStaticMeshComponent::StaticClass());
+		
+		int intRand = FMath::RandRange(0, leaves.Num() - 1);
+		StaticMeshComponent->SetStaticMesh(leaves[intRand]);
+		
+		StaticMeshComponent->SetRelativeLocation(FVector(SplineComponent->GetLocationAtDistanceAlongSpline(leavesDistances,ESplineCoordinateSpace::Local)));
+		StaticMeshComponent->SetRelativeRotation(FQuat(SplineComponent->GetRotationAtDistanceAlongSpline(leavesDistances,ESplineCoordinateSpace::Local))*);
+
+		
+		StaticMeshComponent->SetMobility(EComponentMobility::Movable);
+		StaticMeshComponent->CreationMethod = EComponentCreationMethod::UserConstructionScript;
+		StaticMeshComponent->RegisterComponentWithWorld(GetWorld());
+		StaticMeshComponent->AttachToComponent(SplineComponent,FAttachmentTransformRules::KeepRelativeTransform);
+
+		leavesDistances = leavesDistances+sectionLength;
+	}
+	
+	
 }
 
 

@@ -9,16 +9,9 @@
   <component name="ChangeListManager">
     <list default="true" id="16f4762d-605f-435c-a760-f358137564cb" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PartyGamePS5/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PartyGamePS5/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Assets/Computer/Mats/M_Station.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Assets/Computer/Mats/M_Station.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Assets/Materials/M_TapisRoulant_3.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Assets/Materials/M_TapisRoulant_3.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/Maps/TestRoom.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Maps/TestRoom.umap" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/Maps/Levels/Iterations/Level_03_Converyor_belt/1/4V/YAFYPGZ9CF54J580FTGPO2.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/Maps/Levels/Iterations/Level_03_Converyor_belt/1/4V/YAFYPGZ9CF54J580FTGPO2.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/Maps/Levels/Iterations/Level_03_Converyor_belt/1/BO/P0ZAOQULNE71O90573J4SX.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/Maps/Levels/Iterations/Level_03_Converyor_belt/1/BO/P0ZAOQULNE71O90573J4SX.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/Maps/Levels/Iterations/Level_03_Converyor_belt/7/VO/HFK7EVDC7XO0SC4GSSD2OY.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/Maps/Levels/Iterations/Level_03_Converyor_belt/7/VO/HFK7EVDC7XO0SC4GSSD2OY.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/Maps/Levels/Iterations/Level_03_Converyor_belt/E/DH/U9YMNG2D9O99YQPX716GHF.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/Maps/Levels/Iterations/Level_03_Converyor_belt/E/DH/U9YMNG2D9O99YQPX716GHF.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/IvyModule/IvyModule.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/IvyModule/IvyModule.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PartyGamePS5.uproject" beforeDir="false" afterPath="$PROJECT_DIR$/PartyGamePS5.uproject" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/IvyModule/Private/IvyModulDetails.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/IvyModule/Private/IvyModulDetails.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/IvyModule/Private/IvyModulDetails.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/IvyModule/Private/IvyModulDetails.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/IvyModule/Private/IvyStatic.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/IvyModule/Private/IvyStatic.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/IvyModule/Public/IvyStatic.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/IvyModule/Public/IvyStatic.h" afterDir="false" />
     </list>
@@ -48,26 +41,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "C++ Project.PartyGamePS5.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;C++ Project.PartyGamePS5.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "rider.external.source.directories": [
-      "C:\\Users\\GAME3\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\DecompilerCache",
-      "C:\\Users\\GAME3\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\SourcesCache",
-      "C:\\Users\\GAME3\\AppData\\Local\\Symbols\\src"
+  &quot;keyToStringList&quot;: {
+    &quot;rider.external.source.directories&quot;: [
+      &quot;C:\\Users\\drako\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\DecompilerCache&quot;,
+      &quot;C:\\Users\\drako\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\SourcesCache&quot;,
+      &quot;C:\\Users\\drako\\AppData\\Local\\Symbols\\src&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="PartyGamePS5" type="CppProject" factoryName="C++ Project">
       <configuration_1>
@@ -150,6 +143,8 @@
       <workItem from="1714083874508" duration="1120000" />
       <workItem from="1714128437642" duration="6095000" />
       <workItem from="1714392142144" duration="12249000" />
+      <workItem from="1714408029695" duration="2553000" />
+      <workItem from="1714411250071" duration="8587000" />
     </task>
     <servers />
   </component>
