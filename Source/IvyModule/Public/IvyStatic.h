@@ -11,6 +11,7 @@
 #include "Components/StaticMeshComponent.h"
 #include "Math/UnrealMathUtility.h"
 #include "Kismet/KismetMathLibrary.h"
+#include "Selection.h"
 
 
 #include "GameFramework/Actor.h"
@@ -32,26 +33,35 @@ protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
-public:	
+public:
+
+
+	UFUNCTION()
+	void OnObjectSelected(UObject* Object);
+
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
+
+	//Clean les Spline Mesh tiges + spline points
+	UFUNCTION(CallInEditor, Category = "Ivy Function")
+	virtual void ClearSplinePoints();
+
+	UFUNCTION(CallInEditor, Category = "Ivy Function")
+	virtual void CreateLeaves();
 	
-	UPROPERTY(VisibleAnywhere, Category = "IvySettings")
+	UPROPERTY(BlueprintReadOnly)
 	TArray<USplineMeshComponent*> AllStems;
-
-	UPROPERTY(BlueprintReadWrite, EditAnywhere ,Category = "LeavesSettings")
-	TArray<UStaticMeshComponent*> AllLeaves;
-
-	UPROPERTY(BlueprintReadWrite, EditAnywhere ,Category = "LeavesSettings")
-	int AllLeavesTemp;
 	
 	UPROPERTY(BlueprintReadWrite,EditAnywhere, Category = "LeavesSettings",meta=(Tooltip="Prefer distance between leaves"))
-	bool autoLeaves;
+	bool autoLeaves = true;
+	
+	UPROPERTY(BlueprintReadWrite,EditAnywhere, Category = "LeavesSettings",meta=(Tooltip="Generate Leaves when you click outside the Blueprint"))
+	bool generateAutoLeaves = true;
 
-	UPROPERTY(BlueprintReadWrite,EditAnywhere, Category = "LeavesSettings",meta=(EditCondition="!autoLeaves",EditConditionHides))
+	UPROPERTY(BlueprintReadWrite,EditAnywhere, Category = "LeavesSettings",meta=(EditCondition="!autoLeaves",EditConditionHides,Tooltip="Number of leaves on the stem"))
 	int nbLeaves;
 
-	UPROPERTY(BlueprintReadWrite,EditAnywhere, Category = "LeavesSettings",meta=(EditCondition="autoLeaves",EditConditionHides))
+	UPROPERTY(BlueprintReadWrite,EditAnywhere, Category = "LeavesSettings",meta=(EditCondition="autoLeaves",EditConditionHides,Tooltip="Distance bitween next leaves"))
 	float leavesDistances;
 
 	UPROPERTY(BlueprintReadWrite,EditAnywhere, Category = "LeavesSettings")
@@ -68,14 +78,9 @@ public:
 
 	UPROPERTY(BlueprintReadWrite,EditAnywhere, Category = "Spline")
 	class UMaterialInterface* DefaultMaterial;
-//Clean les Spline Mesh tiges + spline points
-	UFUNCTION(CallInEditor, Category = "IvySettings")
-	virtual void ClearSplinePoints();
 
-	UFUNCTION(CallInEditor, Category = "IvySettings")
-	virtual void CreateLeaves();
 private :
-	void clearLeaves();
+	bool AllLeavesTemp = false;
 	
 	
 	/*

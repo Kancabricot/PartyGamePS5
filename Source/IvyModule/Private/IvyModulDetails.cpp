@@ -22,6 +22,9 @@ TSharedRef<IDetailCustomization> FIvyModulDetails::MakeInstance()
 void FIvyModulDetails::CustomizeDetails(IDetailLayoutBuilder& DetailBuilder)
 {
 	//DetailBuilder.GetObjectsBeingCustomized(ObjectsToEdit);
+	IDetailCategoryBuilder& Category = DetailBuilder.EditCategory("Ivy Function",FText::GetEmpty(),ECategoryPriority::Important);
+	Category.SetCategoryVisibility(true
+);
 
 	IDetailCategoryBuilder& Category2 = DetailBuilder.EditCategory("Rendering",FText::GetEmpty(),ECategoryPriority::Default);
 	Category2.SetCategoryVisibility(false
@@ -59,7 +62,7 @@ void FIvyModulDetails::CustomizeDetails(IDetailLayoutBuilder& DetailBuilder)
 	Category10.SetCategoryVisibility(false
 );
 
-	IDetailCategoryBuilder& Category = DetailBuilder.EditCategory("IvySettings",FText::GetEmpty(),ECategoryPriority::Important);
+	
 
 	/*Category.AddCustomRow(LOCTEXT("Keyword", "Yolo"))
    .NameContent()
