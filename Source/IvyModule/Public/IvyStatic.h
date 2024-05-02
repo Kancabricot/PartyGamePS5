@@ -39,16 +39,19 @@ public:
 	UPROPERTY(VisibleAnywhere, Category = "IvySettings")
 	TArray<USplineMeshComponent*> AllStems;
 
-	UPROPERTY(VisibleAnywhere, Category = "LeavesSettings")
+	UPROPERTY(BlueprintReadWrite, EditAnywhere ,Category = "LeavesSettings")
 	TArray<UStaticMeshComponent*> AllLeaves;
+
+	UPROPERTY(BlueprintReadWrite, EditAnywhere ,Category = "LeavesSettings")
+	int AllLeavesTemp;
 	
 	UPROPERTY(BlueprintReadWrite,EditAnywhere, Category = "LeavesSettings",meta=(Tooltip="Prefer distance between leaves"))
 	bool autoLeaves;
 
-	UPROPERTY(BlueprintReadWrite,EditAnywhere, Category = "LeavesSettings",meta=(EditCondition="autoLeaves",EditConditionHides))
+	UPROPERTY(BlueprintReadWrite,EditAnywhere, Category = "LeavesSettings",meta=(EditCondition="!autoLeaves",EditConditionHides))
 	int nbLeaves;
 
-	UPROPERTY(BlueprintReadWrite,EditAnywhere, Category = "LeavesSettings",meta=(EditCondition="!autoLeaves",EditConditionHides))
+	UPROPERTY(BlueprintReadWrite,EditAnywhere, Category = "LeavesSettings",meta=(EditCondition="autoLeaves",EditConditionHides))
 	float leavesDistances;
 
 	UPROPERTY(BlueprintReadWrite,EditAnywhere, Category = "LeavesSettings")
@@ -73,6 +76,7 @@ public:
 	virtual void CreateLeaves();
 private :
 	void clearLeaves();
+	
 	
 	/*
 	UPROPERTY(VisibleAnywhere, Category = "Spline")
