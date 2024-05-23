@@ -11,6 +11,5 @@ public class TemplateLocalPlayerEditorTarget : TargetRules
 		DefaultBuildSettings = BuildSettingsVersion.V2;
 		IncludeOrderVersion = EngineIncludeOrderVersion.Unreal5_1;
 		ExtraModuleNames.Add("TemplateLocalPlayer");
-		ExtraModuleNames.Add("IvyModule");
 	}
 }

@@ -11,11 +11,6 @@
 			"AdditionalDependencies": [
 				"Engine"
 			]
-		},
-		{
-			"Name": "IvyModule",
-			"Type": "Editor",
-			"LoadingPhase": "PostEngineInit"
 		}
 	],
 	"Plugins": [
